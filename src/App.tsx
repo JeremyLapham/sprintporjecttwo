@@ -1,12 +1,15 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 
 function App() {
   return (
     <Container>
+      <Row>
 
+
+      </Row>
     </Container>
   );
 }
