@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUnlockKeyhole } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col, Form, InputGroup, Button } from 'react-bootstrap';
+import { createAccount } from '../../Services/DataService';
 
 export default function CreateAccount() {
     let navigate = useNavigate();
@@ -17,6 +18,14 @@ export default function CreateAccount() {
             Username,
             password
         }
+        const GetLoggedInData = async () => {
+            let result: any = await createAccount(userData)
+
+            if (result) {
+                navigate('/');
+            }
+        }
+        GetLoggedInData()
     }
     return (
         <Container fluid className='loginBG d-flex align-items-center justify-content-center'>
