@@ -16,13 +16,23 @@ async function UserAPIFetch ()
 }
 
 async function createAccount(createdUser){
-    const res = await fetch('https://kenblogapi.azurewebsites.net/User/AddUser', {
+    const res = await fetch('https://sprintwarshost.azurewebsites.net/user/adduser', {
         method: "POST",
         headers: {
             'Content-Type': "application/json"
         },
         body: JSON.stringify(createdUser)
     });
+
+    if (!res.ok) {
+        const message = `An Error has Occured ${res.status}`;
+        throw new Error(message);
+    }
+    let data = await res.json();
+    console.log(data);
 }
+
+
+
 
 export { createAccount, UserAPIFetch }
