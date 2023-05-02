@@ -1,0 +1,49 @@
+:root {
+    --Background: #16171b;
+    --loginBox: #222327;
+    --textColor: #efefef;
+    --signBtnBG: #b63a29;
+}
+
+.loginBG {
+    background-color: var(--Background);
+    color: var(--textColor);
+    min-height: 100vh;
+}
+
+.boxBG {
+    background-color: var(--loginBox);
+    height: 400px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.codeMasterTxt {
+    margin: 2rem 0 5rem 0;
+}
+
+.passInput,
+.userInput {
+    width: 250px;
+    height: 40px;
+    border: 1px solid white !important;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--textColor);
+}
+
+.passInput {
+    border-top: none !important;
+    border-radius: 0 0 5px 5px;
+    margin-top:-1rem;
+}
+
+.userInput {
+    border-radius: 5px 5px 0 0;
+}
+
+.signInBtn {
+    margin-top: 4rem;
+    background-color: var(--signBtnBG) !important;
+    color: var(--textColor);
+    width:250px;
+}
