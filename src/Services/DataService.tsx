@@ -15,22 +15,14 @@ async function UserAPIFetch ()
     console.log(codeWarsData);
 }
 
-function Test () {
-
-    return(
-        <Container>
-            <Row>
-                <Col>
-                    <button onClick={UserAPIFetch}>Get API Data</button>     
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    
-                </Col>
-            </Row>
-        </Container>
-    );
+async function createAccount(createdUser){
+    const res = await fetch('https://kenblogapi.azurewebsites.net/User/AddUser', {
+        method: "POST",
+        headers: {
+            'Content-Type': "application/json"
+        },
+        body: JSON.stringify(createdUser)
+    });
 }
 
-export { Test, UserAPIFetch }
+export { createAccount, UserAPIFetch }
