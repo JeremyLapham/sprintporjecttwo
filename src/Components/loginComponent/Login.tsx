@@ -58,7 +58,7 @@ export default function Login() {
                         </Row>
                         <Row>
                             <Col>
-                                <h6>Don't have an account? <Button className='toSignUpBtn' variant=''>Sign Up Here</Button></h6>
+                                <h6>Don't have an account? <Button className='toSignUpBtn' onClick={() => navigate('/createAccount')} variant=''>Sign Up Here</Button></h6>
                             </Col>
                         </Row>
                     </div>
