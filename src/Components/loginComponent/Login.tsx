@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import './Login.css';
-import { Container, Row, Col, Button, Form } from 'react-bootstrap';
+import { Container, Row, Col, Button, Form, InputGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUnlockKeyhole } from '@fortawesome/free-solid-svg-icons'
+import { faUnlockKeyhole } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+    let navigate = useNavigate();
 
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
@@ -22,7 +24,7 @@ export default function Login() {
                     <div className='boxBG d-flex flex-column align-items-center'>
                         <Row>
                             <Col>
-                                <h2 className='codeMasterTxt'>CodeMaster</h2>
+                                <h2 className='codeMasterTxt'>CodeReserve</h2>
 
                             </Col>
                         </Row>
@@ -35,18 +37,28 @@ export default function Login() {
                                     onChange={({ target: { value } }) => setUserName(value)}
                                 />
                             </Form.Group>
-                            <Form.Group className="mb-3" controlId="Password">
-                                <Form.Control
-                                    className='passInput'
-                                    type="password"
-                                    placeholder="Password"
-                                    onChange={({ target: { value } }) => setPassword(value)}
-                                />
+                            <Form.Group controlId="Password">
+                                <InputGroup className='passInput'>
+                                    <InputGroup.Text className='icon'>
+                                        <FontAwesomeIcon icon={faUnlockKeyhole} />
+                                    </InputGroup.Text>
+                                    <Form.Control
+                                        type="password"
+                                        placeholder="Password"
+                                        className='passInput2'
+                                        onChange={({ target: { value } }) => setPassword(value)}
+                                    />
+                                </InputGroup>
                             </Form.Group>
                         </Form>
                         <Row>
                             <Col>
                                 <Button variant='' className='signInBtn' onClick={handleLogin}>SIGN IN</Button>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <h6>Don't have an account? <Button className='toSignUpBtn' variant=''>Sign Up Here</Button></h6>
                             </Col>
                         </Row>
                     </div>

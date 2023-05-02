@@ -37,6 +37,18 @@
     margin-top:-1rem;
 }
 
+.passInput2 {
+    background-color: transparent;
+    border: none !important;
+}
+
+.icon {
+    background-color: transparent;
+    color:white;
+    border: none !important;
+    transform: scaleX(-1);
+}
+
 .userInput {
     border-radius: 5px 5px 0 0;
 }
