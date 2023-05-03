@@ -17,20 +17,24 @@ export default function CreateAccount() {
     const [Admin, setAdmin] = useState(false);
 
     const handleCreate = async () => {
-        let userData = {
-            Id: 0,
-            Username,
-            password,
-            isAdmin: Admin
-        }
-        const GetLoggedInData = async () => {
-            let result: boolean = await createAccount(userData)
-
-            if (result) {
-                navigate('/');
+        if(confirmPass === password) {
+            let userData = {
+                Id: 0,
+                Username,
+                password,
+                isAdmin: Admin
             }
+            const GetLoggedInData = async () => {
+                let result: boolean = await createAccount(userData)
+                
+                if (result) {
+                    navigate('/');
+                }
+            }
+            GetLoggedInData()
+        } else {
+            alert('Please make sure your password is the same');
         }
-        GetLoggedInData()
     }
 
     const [isChecked, setIsChecked] = useState(false);
@@ -92,7 +96,7 @@ export default function CreateAccount() {
                                         type="password"
                                         placeholder="Confirm Password"
                                         className='passInput3'
-                                        onChange={({ target: { value } }) => setPassword(value)}
+                                        onChange={({ target: { value } }) => setSonfirmPass(value)}
                                     />
                                 </InputGroup>
                             </Form.Group>
@@ -112,12 +116,12 @@ export default function CreateAccount() {
                         </Row>
                         <Row>
                             <Col>
-                                <Button variant='' className='signInBtn' onClick={handleCreate}>SIGN UP</Button>
+                                <Button variant='' className='signUpBtn' onClick={handleCreate}>SIGN UP</Button>
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                                <h6 className='' onClick={() => navigate('/')}><Button variant='' className='toLogin'>Log in</Button> If you already have an account</h6>
+                                <h6 className='toLog' onClick={() => navigate('/')}><Button variant='' className='toLogin'>Log in</Button> If you already have an account</h6>
                             </Col>
                         </Row>
                     </div>

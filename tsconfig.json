@@ -9,6 +9,7 @@
   "files": [
     "globals.d.ts",
     "src/Components/loginComponent/Login.tsx",
+    "src/Components/CreateAccount/CreateAccount.tsx",
   ],
   "include": [
     "src/Components/loginComponent/Login.tsx",

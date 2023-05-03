@@ -19,7 +19,7 @@
 }
 
 .codeMasterTxt {
-    margin: -4rem 0 5rem 0;
+    margin: -4rem 0 2rem 0;
     font-size: 64px;
 }
 
@@ -87,18 +87,30 @@
 }
 
 .toSignUpBtn {
-    color:rgb(56, 56, 167) !important;
-    margin:0 !important;
+    color:rgb(255, 255, 255) !important;
+    margin:-5px 0 0 0 !important;
     padding:0 !important;
+    text-decoration: underline;
 }
 
 .userInput {
     border-radius: 20px 20px 0 0;
 }
 
+.toSign,
+.toLog {
+    margin-top:41px;
+}
+
 .signInBtn {
-    margin-top: 4rem;
+    margin-top: 8.5rem;
     background-color: var(--signBtnBG) !important;
     color: var(--textColor);
-    width:250px;
+    width:555px;
+}
+.signUpBtn {
+    margin-top: 2rem;
+    background-color: var(--signBtnBG) !important;
+    color: var(--textColor);
+    width:555px;
 }
