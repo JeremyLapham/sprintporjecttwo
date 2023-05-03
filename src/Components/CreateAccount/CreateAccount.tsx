@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUnlockKeyhole } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { Container, Row, Col, Form, InputGroup, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form, InputGroup, Button, Popover, OverlayTrigger } from 'react-bootstrap';
 import { createAccount } from '../../Services/DataService';
 import logo from '../../assets/logoSprint.png';
 
@@ -15,9 +15,11 @@ export default function CreateAccount() {
     const [password, setPassword] = useState('');
     const [confirmPass, setSonfirmPass] = useState('');
     const [Admin, setAdmin] = useState(false);
+    const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()])(?=.{8,})/;
 
     const handleCreate = async () => {
-        if(confirmPass === password && Username !== null) {
+        //8 chacters, one capital letter, lowercase, number, special chancter, 
+        if (confirmPass === password && Username !== null && password.match(regex)) {
             let userData = {
                 Id: 0,
                 Username,
@@ -26,14 +28,14 @@ export default function CreateAccount() {
             }
             const GetLoggedInData = async () => {
                 let result: boolean = await createAccount(userData)
-                
+
                 if (result) {
                     navigate('/');
                 }
             }
             GetLoggedInData()
         } else {
-            alert('Please make sure your password is the same');
+            alert('Please make sure that you have entered a username and that your passwords match and make sure you followed the password directions');
         }
     }
 
@@ -43,6 +45,14 @@ export default function CreateAccount() {
         setIsChecked(e.target.checked);
         setAdmin(!isChecked);
     }
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Header as="h3">Password</Popover.Header>
+            <Popover.Body>
+                Please make sure to have 8 characters, One Uppercase, One Lowercase, One number, and One Special Character
+            </Popover.Body>
+        </Popover>
+    );
 
     return (
         <Container fluid className='loginBG d-flex align-items-center justify-content-center'>
@@ -74,6 +84,7 @@ export default function CreateAccount() {
                                     />
                                 </InputGroup>
                             </Form.Group>
+                                    <OverlayTrigger trigger="click" placement="right" overlay={popover}>
                             <Form.Group controlId="Password">
                                 <InputGroup className='PassInput'>
                                     <InputGroup.Text className='iconMiddle'>
@@ -87,6 +98,7 @@ export default function CreateAccount() {
                                     />
                                 </InputGroup>
                             </Form.Group>
+                                    </OverlayTrigger>
                             <Form.Group controlId="ConfirmPassword">
                                 <InputGroup className='passInputConfirm'>
                                     <InputGroup.Text className='icon'>

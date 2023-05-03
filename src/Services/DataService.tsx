@@ -34,3 +34,9 @@ export async function LoginUser(user: { Username: string; password: string; }){
     console.log(data);
     return data;
 }
+
+export async function GetKataData(user: string) {
+    const response = await fetch(`https://www.codewars.com/api/v1/users/${user}`);
+    const data = await response.json();
+    return data;
+}
