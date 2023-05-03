@@ -1,0 +1,82 @@
+.logo {
+    margin-top: 74px;
+}
+
+.slider {
+    display: flex;
+    justify-content: start;
+}
+
+.react-switch-checkbox {
+    display: inline-block;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.react-switch-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 26px;
+    height: 12px;
+    border: 1px solid white;
+    background: transparent;
+    border-radius: 100px;
+    transition: background-color 0.2s;
+}
+
+.react-switch-label .react-switch-button {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 10px;
+    border-radius: 45px;
+    transition: 0.2s;
+    background: hsl(0, 0%, 100%) !important;
+    box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+    left: 2px;
+}
+
+.react-switch-checkbox:checked+.react-switch-label .react-switch-button {
+    left: calc(100% - 4px);
+    transform: translateX(-100%) translateY(-50%);
+    background: white;
+}
+
+.react-switch-checkbox:checked+.react-switch-label {
+    background: hsl(0, 0%, 0%);
+}
+
+.react-switch-label:active .react-switch-button {
+    width: 25px;
+}
+
+.darkTxtColor {
+    color: hsl(228, 34%, 66%);
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.lightTxtColor {
+    color: hsl(228, 12%, 44%);
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.toLogin {
+    color:white;
+    text-decoration: underline;
+    padding:0 !important;
+    margin-top:-5px !important;
+}
+
+@media screen and (max-width: 426px) and (min-width: 325px) {
+    .darkModeMove {
+        margin-right: 11.3rem;
+    }
+}

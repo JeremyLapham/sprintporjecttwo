@@ -15,7 +15,7 @@ async function UserAPIFetch ()
     console.log(codeWarsData);
 }
 
-async function createAccount(createdUser){
+async function createAccount(createdUser: { Id: number; Username: string; password: string; }){
     const res = await fetch('https://sprintwarshost.azurewebsites.net/user/adduser', {
         method: "POST",
         headers: {
@@ -30,6 +30,7 @@ async function createAccount(createdUser){
     }
     let data = await res.json();
     console.log(data);
+    return data;
 }
 
 
