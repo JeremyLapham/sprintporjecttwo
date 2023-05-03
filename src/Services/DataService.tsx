@@ -1,12 +1,16 @@
-import React from "react";
-import { Container, Row, Col } from 'react-bootstrap';
+
 
 let codeWarsUserData: any = '';
+let userCompletedKataData: any = '';
+let userAuthoredKataData: any = '';
 let codeWarsKataData: any = '';
 
-async function UserAPIFetch ()
+// let userName: string = 'torret';
+// let kataId: string = '5556282156230d0e5e000089';
+
+async function UserAPIFetch (username: string)
 {
-    let res = await fetch(`https://www.codewars.com/api/v1/users/ricRobo4`);
+    let res = await fetch(`https://www.codewars.com/api/v1/users/${username}`);
     let data = await res.json();
     codeWarsUserData = data;
     console.log(codeWarsUserData);
@@ -16,13 +20,35 @@ async function UserAPIFetch ()
     console.log('Honor: ' + codeWarsUserData.honor);
     console.log('Clan: ' + codeWarsUserData.clan);
     console.log('LeaderBoard Position: ' + codeWarsUserData.leaderboardPosition);
-    console.log('Total Authored Katas: ' + codeWarsUserData.codeChallenges.totalAuthored);
-    console.log('Total Completed Katas: ' + codeWarsUserData.codeChallenges.totalCompleted);
+    // console.log('Total Authored Katas: ' + codeWarsUserData.codeChallenges.totalAuthored);
+    // console.log('Total Completed Katas: ' + codeWarsUserData.codeChallenges.totalCompleted);
+
+    return codeWarsUserData;
 }
 
-async function KataAPIFetch ()
+async function UserCompletedKataAPIFetch (username: string)
 {
-    let res = await fetch(`https://www.codewars.com/api/v1/code-challenges/5556282156230d0e5e000089`);
+    let res = await fetch(`https://www.codewars.com/api/v1/users/${username}/code-challenges/completed?page=1`);
+    let data = await res.json();
+    userCompletedKataData = data;
+    console.log('Completed Katas: ' + userCompletedKataData.totalItems);
+    
+    return userCompletedKataData;
+}
+
+async function UserAuthoredKataAPIFetch (username: string)
+{
+    let res = await fetch(`https://www.codewars.com/api/v1/users/${username}/code-challenges/authored`);
+    let data = await res.json();
+    userAuthoredKataData = data;
+    console.log('Authored Katas: ' + userAuthoredKataData.data[0].name);
+    
+    return userAuthoredKataData;
+}
+
+async function KataAPIFetch (kataId: string)
+{
+    let res = await fetch(`https://www.codewars.com/api/v1/code-challenges/${kataId}`);
     let data = await res.json();
     codeWarsKataData = data;
     console.log(codeWarsKataData);
@@ -31,24 +57,9 @@ async function KataAPIFetch ()
     console.log('Author: ' + codeWarsKataData.createdBy.username);
     console.log('Languages Available: ' + codeWarsKataData.languages);
     console.log('Description: ' + codeWarsKataData.description);
+
+    return codeWarsKataData;
 }
 
-// function Test () {
 
-//     return(
-//         <Container>
-//             <Row>
-//                 <Col>
-//                     <button onClick={UserAPIFetch}>Get API Data</button>     
-//                 </Col>
-//             </Row>
-//             <Row>
-//                 <Col>
-                    
-//                 </Col>
-//             </Row>
-//         </Container>
-//     );
-// }
-
-export { UserAPIFetch, KataAPIFetch }
+export { UserAPIFetch, KataAPIFetch, UserAuthoredKataAPIFetch, UserCompletedKataAPIFetch }
