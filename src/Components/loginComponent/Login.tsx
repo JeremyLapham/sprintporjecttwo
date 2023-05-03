@@ -20,7 +20,7 @@ export default function Login() {
     }
     return (
         <Container fluid className='loginBG d-flex align-items-center justify-content-center'>
-            <TopUser />
+            
             <Row>
                 <Col>
                     <div className='boxBG d-flex flex-column align-items-center'>

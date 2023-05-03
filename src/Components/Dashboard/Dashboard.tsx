@@ -1,8 +1,10 @@
 import React from 'react';
 import './Dashboard.css';
-
+import TopUser from '../TopUser/TopUser'
 export default function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div>
+    <TopUser />
+    </div>
   )
 }
