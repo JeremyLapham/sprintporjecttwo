@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import './Login.css';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFontAwesome } from '@fortawesome/free-solid-svg-icons';
 import { faUnlockKeyhole } from '@fortawesome/free-solid-svg-icons'
-
+import TopUser from '../TopUser/TopUser';
 export default function Login() {
 
     const [userName, setUserName] = useState('');
@@ -17,6 +17,7 @@ export default function Login() {
     }
     return (
         <Container fluid className='loginBG d-flex align-items-center justify-content-center'>
+            <TopUser />
             <Row>
                 <Col>
                     <div className='boxBG d-flex flex-column align-items-center'>
