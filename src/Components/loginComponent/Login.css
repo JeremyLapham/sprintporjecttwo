@@ -13,19 +13,28 @@
 
 .boxBG {
     background-color: var(--loginBox);
-    height: 400px;
-    width: 400px;
+    width: 959px;
+    height: 733px;
     border-radius: 10px;
 }
 
 .codeMasterTxt {
-    margin: 2rem 0 5rem 0;
+    margin: -4rem 0 5rem 0;
+    font-size: 64px;
 }
 
 .passInput,
 .userInput {
-    width: 250px;
-    height: 40px;
+    width: 556px;
+    height: 70px;
+    border: 1px solid white !important;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--textColor);
+}
+
+.PassInput {
+    width: 556px;
+    height: 70px;
     border: 1px solid white !important;
     background-color: rgba(0, 0, 0, 0);
     color: var(--textColor);
@@ -33,12 +42,58 @@
 
 .passInput {
     border-top: none !important;
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 20px 20px;
     margin-top:-1rem;
 }
 
+.passInputConfirm {
+    width: 556px;
+    height: 70px;
+    border: 1px solid white !important;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--textColor);
+    border-radius: 0 0 20px 20px;
+}
+
+.passInput1 {
+    background-color: rgba(0, 0, 0, 0);
+    border:none !important;
+    color: var(--textColor);
+}
+
+.passInput2 {
+    background-color: transparent;
+    border: none !important;
+    color:white;
+}
+
+.passInput3 {
+    background-color: transparent;
+    border: none !important;
+    color:white;
+}
+
+.icon {
+    background-color: transparent;
+    color:white;
+    border: none !important;
+    transform: scaleX(-1);
+}
+.iconMiddle {
+    background-color: transparent;
+    color:white;
+    border: none !important;
+    transform: scaleX(-1);
+}
+
+.toSignUpBtn {
+    color:rgb(56, 56, 167) !important;
+    margin:0 !important;
+    padding:0 !important;
+}
+
 .userInput {
-    border-radius: 5px 5px 0 0;
+    border-radius: 20px 20px 0 0;
 }
 
 .signInBtn {
