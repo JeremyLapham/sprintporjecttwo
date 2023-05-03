@@ -5,6 +5,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Login from './Components/loginComponent/Login';
 import CreateAccount from './Components/CreateAccount/CreateAccount';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Dashboard from './Components/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='createAccount' element={<CreateAccount />} />
+          <Route path='Dashboard' element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </div>
