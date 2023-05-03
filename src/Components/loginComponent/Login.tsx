@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './Login.css';
 import { Container, Row, Col, Button, Form, InputGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,8 +7,10 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/logoSprint.png';
 import { LoginUser } from '../../Services/DataService';
+import { MyContext } from '../context'
 
 export default function Login() {
+    const { setUsername } = useContext(MyContext);
     let navigate = useNavigate();
 
     const [Username, setUserName] = useState('');
@@ -19,11 +21,12 @@ export default function Login() {
             Username,
             password
         }
+        setUsername(Username);
         let token = await LoginUser(userData);
-            if (token.token != null) {
-                localStorage.setItem("Token", token.token);
-                navigate('/DashBoard');
-            }
+        if (token.token != null) {
+            localStorage.setItem("Token", token.token);
+            navigate('/DashBoard');
+        }
     }
     return (
         <Container fluid className='loginBG d-flex align-items-center justify-content-center'>
@@ -42,7 +45,7 @@ export default function Login() {
                             </Col>
                         </Row>
                         <Form>
-                        <Form.Group controlId="Username">
+                            <Form.Group controlId="Username">
                                 <InputGroup className='userInput'>
                                     <InputGroup.Text className='icon'>
                                         <FontAwesomeIcon icon={faUser} />

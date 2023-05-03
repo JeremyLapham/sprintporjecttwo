@@ -17,7 +17,7 @@ export default function CreateAccount() {
     const [Admin, setAdmin] = useState(false);
 
     const handleCreate = async () => {
-        if(confirmPass === password) {
+        if(confirmPass === password && Username !== null) {
             let userData = {
                 Id: 0,
                 Username,

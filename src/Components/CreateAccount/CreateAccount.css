@@ -43,7 +43,7 @@
 }
 
 .react-switch-checkbox:checked+.react-switch-label .react-switch-button {
-    left: calc(100% - 4px);
+    left: calc(100% - 1px);
     transform: translateX(-100%) translateY(-50%);
     background: white;
 }
