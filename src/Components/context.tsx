@@ -7,6 +7,8 @@ interface ContextType {
     setUserData: (userData: object) => void;
     isAdmin: any;
     setIsAdmin: (isAdmin: any) => void;
+    userId: number; 
+    setUserId: (userId: number) => void;
 }
 
 export const MyContext = createContext<ContextType>({
@@ -14,5 +16,6 @@ export const MyContext = createContext<ContextType>({
     setUsername: () => { },
     isAdmin: [],
     setIsAdmin: () => { },
-    userData: {}, setUserData: () => {}
+    userData: {}, setUserData: () => {},
+    userId: 0, setUserId: () => {}
 })

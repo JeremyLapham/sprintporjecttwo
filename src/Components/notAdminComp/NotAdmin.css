@@ -1,0 +1,22 @@
+.userKata {
+    background-color: #222327;
+    width: 754px;
+    height: 352px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+}
+
+.notAdminBtn {
+    color: #EFEFEF;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+}
+.clickedNotAdminBtn {
+    color: #222327;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+}

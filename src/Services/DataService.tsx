@@ -52,3 +52,9 @@ export async function GetUserIsAdmin(username: string) {
     const data = await response.json();
     return data;
 }
+
+export async function GetKataByUserId(UserId: number) {
+    const response = await fetch(`https://sprintwarshost.azurewebsites.net/Kata/GetKatasByUserId/${UserId}`);
+    const data = await response.json();
+    return data;
+}

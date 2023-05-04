@@ -13,6 +13,7 @@ import { GetUserIsAdmin } from '../../Services/DataService';
 export default function Login() {
     const { setUsername } = useContext(MyContext);
     const { setIsAdmin } = useContext(MyContext);
+    const { setUserId } = useContext(MyContext);
 
     let navigate = useNavigate();
 
@@ -26,6 +27,7 @@ export default function Login() {
         }
         const user = await GetUserIsAdmin(Username);
         setIsAdmin(user.isAdmin);
+        setUserId(user.userId);
         setUsername(Username);
         let token = await LoginUser(userData);
         if (token.token != null) {

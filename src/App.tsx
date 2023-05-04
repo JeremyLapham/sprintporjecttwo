@@ -12,9 +12,10 @@ function App() {
   const [username, setUsername] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
   const [userData, setUserData] = useState({});
+  const [userId, setUserId] = useState(0);
   return (
     <div className='font'>
-      <MyContext.Provider value={{ username, setUsername, isAdmin, setIsAdmin, userData, setUserData }}>
+      <MyContext.Provider value={{ username, setUsername, isAdmin, setIsAdmin, userData, setUserData, userId, setUserId }}>
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Login />} />
