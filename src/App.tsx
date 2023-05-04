@@ -10,10 +10,11 @@ import { MyContext } from './Components/context';
 
 function App() {
   const [username, setUsername] = useState('');
-  const [isAdmin, setIsAdmin] = useState([]);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [userData, setUserData] = useState({});
   return (
     <div className='font'>
-      <MyContext.Provider value={{ username, setUsername, isAdmin, setIsAdmin }}>
+      <MyContext.Provider value={{ username, setUsername, isAdmin, setIsAdmin, userData, setUserData }}>
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Login />} />

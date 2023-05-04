@@ -12,23 +12,23 @@ import { useNavigate } from 'react-router-dom';
 export default function Dashboard() {
   const { isAdmin } = useContext(MyContext);
   interface userData {
-    codeChallenges: any; username: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; clan: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; honor: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; leaderboardPosition: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; ranks: any; overall: any
+    codeChallenges: any; username: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; clan: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; honor: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; leaderboardPosition: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; ranks: { overall: { name: string; color: string}}; 
   }
   const navigate = useNavigate();
   const { username } = useContext(MyContext);
   const [data, setData] = useState<userData>({
-    codeChallenges: {}, username: null, name: null, clan: null, honor: null, leaderboardPosition: null, ranks:{}, overall: {}
+    codeChallenges: {}, username: null, name: null, clan: null, honor: null, leaderboardPosition: null, ranks:{ overall: { name: '', color:''}}
   });
 
 
   useEffect(() => {
     const UsersKataData = async () => {
       const usersData = await GetKataData(username);
-      console.log(usersData)
       setData(usersData);
     };
     UsersKataData()
   }, []);
+  
   return (
     <Container fluid className='dashBoard'>
       <div className='topBlock'>
