@@ -1,0 +1,19 @@
+.kata-display-body{
+    width: 550px;
+}
+
+.kata-languages{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.kata-info-row{
+    display: flex;
+    flex-direction: column;
+}
+
+.kata-title-kyu{
+    display: flex;
+    flex-direction: row;
+}
