@@ -28,7 +28,7 @@ function KataLanguage (language: string)
             break;
         }
         case 'crystal': {
-            result = 'crystal';
+            result = 'cr';
             break;
         }
         case 'dart': {
@@ -36,11 +36,11 @@ function KataLanguage (language: string)
             break;
         }
         case 'elixir': {
-            result = 'elixir';
+            result = 'ex';
             break;
         }
         case 'fsharp': {
-            result = 'fsharp';
+            result = 'fs';
             break;
         }
         case 'go': {
@@ -59,7 +59,7 @@ function KataLanguage (language: string)
             result = 'java';
             break;
         }
-        case 'javaScript': {
+        case 'javascript': {
             result = 'js';
             break;
         }
