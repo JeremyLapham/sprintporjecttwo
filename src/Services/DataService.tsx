@@ -40,3 +40,15 @@ export async function GetKataData(user: string) {
     const data = await response.json();
     return data;
 }
+
+export async function GetAllUsers() {
+    const response = await fetch(`https://sprintwarshost.azurewebsites.net/user/GetAllUsers`);
+    const data = await response.json();
+    return data;
+}
+
+export async function GetUserIsAdmin(username: string) {
+    const response = await fetch(`https://sprintwarshost.azurewebsites.net/user/UserByUsername/${username}`);
+    const data = await response.json();
+    return data;
+}

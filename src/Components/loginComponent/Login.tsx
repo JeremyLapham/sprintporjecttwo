@@ -7,10 +7,13 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/logoSprint.png';
 import { LoginUser } from '../../Services/DataService';
-import { MyContext } from '../context'
+import { MyContext } from '../context';
+import { GetUserIsAdmin } from '../../Services/DataService';
 
 export default function Login() {
     const { setUsername } = useContext(MyContext);
+    const { setIsAdmin } = useContext(MyContext);
+
     let navigate = useNavigate();
 
     const [Username, setUserName] = useState('');
@@ -21,6 +24,8 @@ export default function Login() {
             Username,
             password
         }
+        const user = await GetUserIsAdmin(Username);
+        setIsAdmin(user.isAdmin);
         setUsername(Username);
         let token = await LoginUser(userData);
         if (token.token != null) {

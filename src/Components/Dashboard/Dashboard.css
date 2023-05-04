@@ -1,0 +1,15 @@
+.dashBoard {
+    background-color: #16171b;
+    min-height: 100vh;
+}
+
+.topBlock {
+    background: linear-gradient(180deg, #222327 -15.32%, rgba(34, 35, 39, 0.817708) 39.89%, rgba(34, 35, 39, 0) 84.68%);
+    height: 225px;
+}
+
+.logoDash {
+    height: 91px;
+    width: 165px;
+    margin-bottom:-2rem;
+}
