@@ -14,6 +14,15 @@
     top: 74px;
     border-radius: 14px;
 }
+.infoDivTwo{
+    background-color: var(--Background);
+    position: absolute;
+    width: 1180px;
+    height: 242px;
+    left: calc(50% - 1180px/2);
+    top: 300px;
+    border-radius: 14px;
+}
 .kyu{
 -webkit-text-fill-color: purple;
 width: 99px;
@@ -63,4 +72,34 @@ background: #000000;
     font-size: 20px;
     
     
+}
+
+.dBarOne{
+    background-color: var(--Background);
+    -webkit-text-fill-color: white;
+    margin-top: 53%;
+    line-height: 55px;
+}
+.kyuTwo{
+    -webkit-text-fill-color: purple;
+width: 99px;
+height: 15px;
+top: 117px;
+margin-top: 10%;
+margin-left: 5%;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 38px;
+display: flex;
+align-items:center ;
+padding-left: 4%;
+}
+.dBarTwo{
+    background-color: var(--Background);
+    -webkit-text-fill-color: white;
+    margin-top: 3%;
+    line-height: 55px;
+    width: 750px;
 }
