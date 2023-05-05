@@ -11,7 +11,7 @@ This repository is the frontend code of the site. It is designed to be deployed 
 WARNING: When creating an account - follow onscreen direction. You MUST use a valid, pre-existing Codewars account's username as your username. Otherwise you risk breaking the tables. For testing purposes, here are pre-made accounts:
 
 To view the website as a basic user:
-    Username: DanDecoito
+    Username: JeremyLapham
     Password: Pass123
 
 To view the website as an admin user:
