@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Accordion, Col, Row, Button } from "react-bootstrap";
 import "./Userdrop.css";
 
@@ -7,6 +7,8 @@ import "./Userdrop.css";
 
 function UserDrop (props: { userData: {
   ranks: { overall: { name:string; color:string}}; codeChallenges: any; username: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; clan: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; honor: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; leaderboardPosition: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }; }) {
+
+
   return (
     <div>
       <Row className="infoDivTwo">
@@ -22,9 +24,9 @@ function UserDrop (props: { userData: {
         <Col></Col>
         <Col className="dBarOne">
 
-          {props.userData.map((userData) =>(
+          {/* {props.userData.map((userData) =>(
             <div>{userData}</div>
-          ))}
+          ))} */}
           <Accordion defaultActiveKey="0">
 
             <Accordion.Item eventKey="1">

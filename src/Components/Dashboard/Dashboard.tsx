@@ -8,7 +8,7 @@ import UserDrop from '../UserDrop/UserDrop'
 export default function Dashboard() {
   return (
     <div>
-    <UserDrop />
+    {/* <UserDrop /> */}
     <TopUser />
     </div>
   )
