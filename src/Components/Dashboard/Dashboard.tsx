@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './Dashboard.css';
 import TopUser from '../TopUser/TopUser';
-import { GetKataByUserName, GetKataData } from '../../Services/DataService';
+import { GetKataByUserName, GetKataData, GetAllUsers } from '../../Services/DataService';
 import { MyContext } from '../context';
 import logo from '../../assets/logoSprint.png';
 import { Button, Col, Container, Row } from 'react-bootstrap';
@@ -35,7 +35,7 @@ export default function Dashboard() {
     isCompleted: boolean
   }
 
-  const [kata, setKata] = useState<kata>({ 
+  const [kata, setKata] = useState<kata>({
     id: 0,
     personAssigned: "",
     userId: 0,
@@ -46,14 +46,18 @@ export default function Dashboard() {
     isCompleted: false
   });
 
-  const [allUserData, setAllUserData] = useState<userData[]>([{
-    codeChallenges: {},
-    username: null,
-    name: null,
-    clan: null,
-    honor: null,
-    leaderboardPosition: null,
-    ranks: { overall: { name: '', color: '' } },
+
+  interface AllusersData {
+    userId: number,
+    userName: string,
+    isAdmin: boolean,
+    reservedKata: number
+  }
+  const [allUserData, setAllUserData] = useState<AllusersData[]>([{
+    userId: 0,
+    userName: '',
+    isAdmin: false,
+    reservedKata: 0
   }]);
 
 
@@ -61,8 +65,10 @@ export default function Dashboard() {
     const UsersKataData = async () => {
       const usersData = await GetKataData(username);
       const katas = await GetKataByUserName(username);
+      const AllUsers = await GetAllUsers();
       setKata(katas);
       setData(usersData);
+      setAllUserData(AllUsers);
     };
     UsersKataData()
   }, []);
@@ -90,7 +96,7 @@ export default function Dashboard() {
       </div>
       <h1 style={{ color: 'white', zIndex: 100 }}>
 
-        {isAdmin ? <AdminPage /> : <NotAdmin userKata={kata} />}
+        {isAdmin ? <AdminPage users={allUserData}/> : <NotAdmin userKata={kata} />}
       </h1>
     </Container>
   )

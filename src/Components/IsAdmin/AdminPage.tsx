@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import AdminFilter from './AdminFilter';
 import Userdrop from '../UserDrop/UserDrop'
 
-export default function AdminPage() {
+export default function AdminPage(props) {
   return (
     <Container>
         <Row>
@@ -11,7 +11,7 @@ export default function AdminPage() {
         <AdminFilter />
             </Col>
             <Col lg={8}>
-                {/* <Userdrop /> */}
+                <Userdrop userData={props.users}/>
             </Col>
         </Row>
         </Container>

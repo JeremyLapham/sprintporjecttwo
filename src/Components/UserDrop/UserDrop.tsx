@@ -27,7 +27,7 @@ function UserDrop (props: { userData: {
           {/* {props.userData.map((userData) =>(
             <div>{userData}</div>
           ))} */}
-          <Accordion defaultActiveKey="0">
+          {/* <Accordion defaultActiveKey="0">
 
             <Accordion.Item eventKey="1">
               <Accordion.Header className={`${props.userData.ranks.overall.name}`}> {props.userData.ranks.overall.name}</Accordion.Header>
@@ -44,7 +44,7 @@ function UserDrop (props: { userData: {
               </Accordion.Body>
             </Accordion.Item>
 
-          </Accordion>
+          </Accordion> */}
 
         </Col>
       </Row>
