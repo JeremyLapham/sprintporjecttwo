@@ -1,0 +1,44 @@
+.infoDivTwo{
+    background-color:#16171b;
+    position: absolute;
+    width: 1180px;
+    height: 242px;
+    left: calc(50% - 1180px/2);
+    top: 350px;
+    border-radius: 14px;
+    margin-left: 0%;
+}
+.dBarOne{
+    -webkit-text-fill-color: white;
+    margin-top: 42%;
+    line-height: 55px;
+   margin-right: 10%;
+   
+
+   
+    
+}
+.dBox{
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+button.accordion-button{
+    background-color: #16171b;
+    color:#16171b;
+}
+div.dBox.accordion-body{
+    background-color: #16171b;
+}
+button.btn.btn-primary{
+    background-color: #16171b;
+    border-color: white;
+    margin-top: 180px;
+    font-size: 24px;
+}
+
+button.accordion-button.collapsed{
+    font-size: 24px;
+    margin-bottom: 2%;
+}

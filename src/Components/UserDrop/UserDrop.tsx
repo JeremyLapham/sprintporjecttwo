@@ -1,6 +1,6 @@
 import React from 'react'
-import { Accordion, Col, Row } from 'react-bootstrap'
-
+import { Accordion, Col, Row,Button } from 'react-bootstrap'
+import './Userdrop.css';
 
 const UserDrop = () => {
   return (
@@ -15,18 +15,93 @@ const UserDrop = () => {
 
     <Row >
       <Col></Col>
-      <Col>
-      <Accordion className='dBarOne'  defaultActiveKey="0">
+      <Col className='dBarOne' >
+
+      <Accordion  defaultActiveKey="0">
       <Accordion.Item eventKey="1">
-        <Accordion.Header>Accordion Item #1</Accordion.Header>
-        <Accordion.Body>
-       <p>1</p>
-       <p>2</p>
-       <p>3</p>
-       <p>4</p>
+        <Accordion.Header>6kyu UserName</Accordion.Header>
+        <Accordion.Body className='dBox'>
+          <div >
+           <div >Honor:174</div >
+       <div >Leaderboard Position:#365,751</div >
+       <div >Katas Completed:12</div >
+       <div >Katas Authored:2</div > 
+          </div>
+          <div>
+            <Button>Reserve Kata</Button>
+          </div>
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
+
+    <Accordion  defaultActiveKey="0">
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>7kyu UserName</Accordion.Header>
+        <Accordion.Body className='dBox'>
+          <div >
+           <div >Honor:174</div >
+       <div >Leaderboard Position:#365,751</div >
+       <div >Katas Completed:12</div >
+       <div >Katas Authored:2</div > 
+          </div>
+          <div>
+            <Button>Reserve Kata</Button>
+          </div>
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+
+    <Accordion  defaultActiveKey="0">
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>4kyu UserName</Accordion.Header>
+        <Accordion.Body className='dBox'>
+          <div >
+           <div >Honor:174</div >
+       <div >Leaderboard Position:#365,751</div >
+       <div >Katas Completed:12</div >
+       <div >Katas Authored:2</div > 
+          </div>
+          <div>
+            <Button>Reserve Kata</Button>
+          </div>
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+
+    <Accordion  defaultActiveKey="0">
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>7kyu UserName</Accordion.Header>
+        <Accordion.Body className='dBox'>
+          <div >
+           <div >Honor:174</div >
+       <div >Leaderboard Position:#365,751</div >
+       <div >Katas Completed:12</div >
+       <div >Katas Authored:2</div > 
+          </div>
+          <div>
+            <Button>Reserve Kata</Button>
+          </div>
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+
+    <Accordion  defaultActiveKey="0">
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>2kyu UserName</Accordion.Header>
+        <Accordion.Body className='dBox'>
+          <div >
+           <div >Honor:174</div >
+       <div >Leaderboard Position:#365,751</div >
+       <div >Katas Completed:12</div >
+       <div >Katas Authored:2</div > 
+          </div>
+          <div>
+            <Button>Reserve Kata</Button>
+          </div>
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+
             </Col>
     </Row>
 
