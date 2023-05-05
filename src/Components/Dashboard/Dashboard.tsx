@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './Dashboard.css';
 import TopUser from '../TopUser/TopUser';
-import { GetKataByUserId, GetKataData } from '../../Services/DataService';
+import { GetKataByUserName, GetKataData } from '../../Services/DataService';
 import { MyContext } from '../context';
 import logo from '../../assets/logoSprint.png';
 import { Button, Col, Container, Row } from 'react-bootstrap';
@@ -19,22 +19,36 @@ export default function Dashboard() {
   interface userData {
     codeChallenges: any; username: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; clan: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; honor: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; leaderboardPosition: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; ranks: { overall: { name: string; color: string } };
   }
-  interface userKata {
-    id: number; personAssigned: string; userId: number; kataName: string; language: string; isReserved: boolean; isDeleted: boolean;
-  }
   const [data, setData] = useState<userData>({
     codeChallenges: {}, username: null, name: null, clan: null, honor: null, leaderboardPosition: null, ranks: { overall: { name: '', color: '' } }
   });
 
-  const [kata, setKata] = useState<userKata>({ id: 0, personAssigned: '', userId: 0, kataName: '', language: '', isReserved: false, isDeleted: false })
+  interface kata {
+    id: number,
+    personAssigned: string,
+    userId: number,
+    kataName: string,
+    language: string,
+    isReserved: boolean,
+    isDeleted: boolean,
+    isCompleted: boolean
+  }
 
-
-
+  const [kata, setKata] = useState<kata>({ 
+    id: 0,
+    personAssigned: "",
+    userId: 0,
+    kataName: "",
+    language: "",
+    isReserved: false,
+    isDeleted: false,
+    isCompleted: false
+  });
 
   useEffect(() => {
     const UsersKataData = async () => {
       const usersData = await GetKataData(username);
-      const katas = await GetKataByUserId(userId);
+      const katas = await GetKataByUserName(username);
       setKata(katas);
       setData(usersData);
     };

@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import './NotAdmin.css';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Katas from './Katas';
+import Completed from './Completed';
+import Unfinished from './Unfinished';
+import Authored from './Authored';
 
-export default function NotAdmin(props) {
-    const [activeBtn, setActiveBtn] = useState('');
+export default function NotAdmin(props: { userKata: any; }) {
+    const [activeBtn, setActiveBtn] = useState('Kata');
 
     const handleButtonClick = (buttonName: string) => {
         setActiveBtn(buttonName);
@@ -35,7 +38,7 @@ export default function NotAdmin(props) {
 
                 </Col>
                 <Col lg={8}>
-                    <Katas />
+                    {activeBtn === 'Kata' ? <Katas userKata={props.userKata} /> : activeBtn === 'Completed' ? <Completed /> : activeBtn === 'Unfinished' ? <Unfinished /> : activeBtn === 'Authored' ? <Authored /> : ''}
                 </Col>
             </Row>
         </Container>
