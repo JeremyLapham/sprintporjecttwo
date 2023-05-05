@@ -8,6 +8,16 @@ This webapp is a fullstack project that is intended to work in tandem with the w
 
 This repository is the frontend code of the site. It is designed to be deployed to Azure and to host the user-facing side of the site that people will see when they visit the site through a web browser. You can create users (username must be the same as your pre-existing codewars username), login, and depending on if you're an admin or a regular user - see all the other users and assign katas to users, or see all the katas you've been assigned and then keep the record of if you've finished them or not.
 
+WARNING: When creating an account - follow onscreen direction. You MUST use a valid, pre-existing Codewars account's username as your username. Otherwise you risk breaking the tables. For testing purposes, here are pre-made accounts:
+
+To view the website as a basic user:
+    Username: DanDecoito
+    Password: Pass123
+
+To view the website as an admin user:
+    Username: kensf
+    Password: Pass123
+
 Front End Deployment: https://codereserve.azurewebsites.net
 Front End Repo: https://github.com/JeremyLapham/sprintporjecttwo
 Back End Deployment: https://sprintwarshost.azurewebsites.net
