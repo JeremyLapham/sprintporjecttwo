@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './NotAdmin.css';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import Katas from './Katas';
 
 export default function NotAdmin(props) {
     const [activeBtn, setActiveBtn] = useState('');
@@ -34,9 +35,7 @@ export default function NotAdmin(props) {
 
                 </Col>
                 <Col lg={8}>
-                    <div className='userKata'>
-
-                    </div>
+                    <Katas />
                 </Col>
             </Row>
         </Container>
