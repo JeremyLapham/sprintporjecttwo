@@ -35,11 +35,11 @@ export default function Dashboard() {
   }
 
   const [kata, setKata] = useState<kata>({ 
-    id: 0,
-    personAssigned: "",
-    userId: 0,
-    kataName: "",
-    language: "",
+    id: 1,
+    personAssigned: "j",
+    userId: 1,
+    kataName: "j",
+    language: "j",
     isReserved: false,
     isDeleted: false,
     isCompleted: false
