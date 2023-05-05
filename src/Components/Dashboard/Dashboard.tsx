@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import NotAdmin from '../notAdminComp/NotAdmin';
+import AdminPage from '../IsAdmin/AdminPage';
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -45,6 +46,17 @@ export default function Dashboard() {
     isCompleted: false
   });
 
+  const [allUserData, setAllUserData] = useState<userData[]>([{
+    codeChallenges: {},
+    username: null,
+    name: null,
+    clan: null,
+    honor: null,
+    leaderboardPosition: null,
+    ranks: { overall: { name: '', color: '' } },
+  }]);
+
+
   useEffect(() => {
     const UsersKataData = async () => {
       const usersData = await GetKataData(username);
@@ -78,7 +90,7 @@ export default function Dashboard() {
       </div>
       <h1 style={{ color: 'white', zIndex: 100 }}>
 
-        {isAdmin ? 'IM AN ADMIN' : <NotAdmin userKata={kata} />}
+        {isAdmin ? <AdminPage /> : <NotAdmin userKata={kata} />}
       </h1>
     </Container>
   )
