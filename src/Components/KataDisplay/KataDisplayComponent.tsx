@@ -4,7 +4,18 @@ import { KataLanguage } from './KataLanguageDisplay'
 import { KataLanguagesComponent } from './KataLanguagesComponent'
 import './KataDisplay.css'
 
-function KataDisplayComponent() {
+interface CodeWarsProps {
+    kyu: string;
+    kataTitle: string;
+    kataAuthor: string;
+    kataDesc: string;
+}
+
+function KataDisplayComponent({ kyu, kataTitle, kataAuthor, kataDesc}: CodeWarsProps) {
+    // let kyu: string = '6 Kyu'
+    // let kataTitle: string = 'Kata Title';
+    // let kataAuthor: string = 'KataAuthor';
+    // let kataDesc: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis suscipit lorem, eget cursus elit. Ut aliquet metus urna, et ultrices dolor tristique eget.';
   return (
     <Container className='kata-display-body'>
         <Row>
@@ -12,10 +23,11 @@ function KataDisplayComponent() {
                 <Row className='kata-info-row'>
                     <Col>
                         <Row className='kata-title-kyu'>
-                            <Col xs={3}>6 Kyu</Col>
+                            <Col xs={3}>{kyu}</Col>
                             <Col>
-                                Kata Title here
-                                AuthorOfThisKata
+                                {kataTitle}
+                                <br />
+                                {kataAuthor}
                             </Col>
                         </Row>
                     </Col>
@@ -27,7 +39,7 @@ function KataDisplayComponent() {
             <Col>
                 <Row className='kata-languages'>
                     <Col>
-                        <KataLanguagesComponent language={'typescript'} />
+                        <KataLanguagesComponent language={'cpp'} />
                     </Col>
                 </Row>
             </Col>
@@ -35,7 +47,7 @@ function KataDisplayComponent() {
         <Row>
             <Col>
                 Kata Description
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis suscipit lorem, eget cursus elit. Ut aliquet metus urna, et ultrices dolor tristique eget.</p>
+                <p>{kataDesc}</p>
             </Col>
         </Row>
     </Container>
