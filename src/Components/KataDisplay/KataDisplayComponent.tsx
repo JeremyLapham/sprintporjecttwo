@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { KataLanguage } from './KataLanguageDisplay'
+import { KataLanguagesComponent } from './KataLanguagesComponent'
 import './KataDisplay.css'
 
 function KataDisplayComponent() {
@@ -25,16 +26,9 @@ function KataDisplayComponent() {
             </Col>
             <Col>
                 <Row className='kata-languages'>
-                    <Col>C#</Col>
-                    <Col>JS</Col>
-                    <Col>CPP</Col>
-                    <Col>TS</Col>
-                    <Col>PY</Col>
-                    <Col>RS</Col>
-                    <Col>RB</Col>
-                    <Col>JAVA</Col>
-                    <Col>HS</Col>
-                    <Col>PHP</Col>
+                    <Col>
+                        <KataLanguagesComponent language={'typescript'} />
+                    </Col>
                 </Row>
             </Col>
         </Row>

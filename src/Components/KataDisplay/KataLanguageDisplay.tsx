@@ -8,19 +8,19 @@ function KataLanguage (language: string)
             break;
         }
         case 'csharp': {
-            result = 'cs';
+            result = 'c#';
             break;
         }
         case 'cpp': {
-            result = 'cpp';
+            result = 'c++';
             break;
         }
         case 'clojure': {
-            result = 'clojure';
+            result = 'clo';
             break;
         }
-        case 'coffeeScript': {
-            result = 'coffeescript';
+        case 'coffeescript': {
+            result = 'cof';
             break;
         }
         case 'coq': {
@@ -48,7 +48,7 @@ function KataLanguage (language: string)
             break;
         }
         case 'groovy': {
-            result = 'groovy';
+            result = 'gro';
             break;
         }
         case 'haskell': {
@@ -64,11 +64,11 @@ function KataLanguage (language: string)
             break;
         }
         case 'kotlin': {
-            result = 'clojure';
+            result = 'kot';
             break;
         }
         case 'lean': {
-            result = 'clojure';
+            result = 'lean';
             break;
         }
         case 'lua': {
@@ -112,7 +112,7 @@ function KataLanguage (language: string)
             break;
         }
         case 'swift': {
-            result = 'swift';
+            result = 'swf';
             break;
         }
         case 'typescript': {
