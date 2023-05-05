@@ -5,7 +5,7 @@
     --signBtnBG: #b63a29;
 }
 
-.infoDiv{
+.infoDiv {
     background-color: var(--Background);
     position: absolute;
     width: 1180px;
@@ -14,6 +14,7 @@
     top: 74px;
     border-radius: 14px;
 }
+<<<<<<< HEAD
 
 .kyu{
 -webkit-text-fill-color: purple;
@@ -30,18 +31,35 @@ line-height: 38px;
 display: flex;
 align-items:center ;
 padding-left: 4%;
+=======
+>>>>>>> eaa045aa012560c36ae9340f5985ccfab01d1733
 
-
-background: #000000;
+.kyu {
+    -webkit-text-fill-color: purple;
+    width: 99px;
+    height: 15px;
+    top: 117px;
+    margin-top: 10%;
+    margin-left: 5%;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    padding-left: 4%;
+    background: #000000;
 }
-.adminName{
+
+.adminName {
 
     position: absolute;
     width: 445px;
     height: 0px;
     left: calc(50% - 445px/2 - 219.5px);
     top: 59px;
-    
+
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
@@ -49,23 +67,42 @@ background: #000000;
     line-height: 58px;
     display: flex;
     align-items: center;
-    
+
     color: #FFFFFF;
 }
-.tText{
-   
+
+.tText {
+
     padding-left: 10%;
     padding-top: 2%;
     font-size: 20px;
 }
-.bText{
-    
+
+.bText {
     padding-left: 10%;
     font-size: 20px;
-    
-    
+}
+.blue,
+.yellow,
+.white,
+.purple {
+    width: 99px;
+    height: 15px;
+    top: 117px;
+    margin-top: 10%;
+    margin-left: 5%;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    padding-left: 4%;
+    background: #000000;
 }
 
+<<<<<<< HEAD
 .kyuTwo{
     -webkit-text-fill-color: purple;
 width: 99px;
@@ -81,11 +118,20 @@ line-height: 38px;
 display: flex;
 align-items:center ;
 padding-left: 4%;
+=======
+.purple {
+    color: #9c27b0
 }
-.dBarTwo{
-    background-color: var(--Background);
-    -webkit-text-fill-color: white;
-    margin-top: 3%;
-    line-height: 55px;
-    width: 750px;
+
+.blue {
+    color: #2196f3
+>>>>>>> eaa045aa012560c36ae9340f5985ccfab01d1733
+}
+
+.yellow {
+    color: #f0db4f
+}
+
+.white {
+    color: #ffffff
 }

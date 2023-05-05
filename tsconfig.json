@@ -10,6 +10,8 @@
     "globals.d.ts",
     "src/Components/loginComponent/Login.tsx",
     "src/Components/CreateAccount/CreateAccount.tsx",
+    "src/Components/Dashboard/Dashboard.tsx",
+
   ],
   "include": [
     "src/Components/loginComponent/Login.tsx",
