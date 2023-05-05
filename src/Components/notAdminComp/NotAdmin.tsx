@@ -38,7 +38,7 @@ export default function NotAdmin(props: { userKata: any; }) {
 
                 </Col>
                 <Col lg={8}>
-                    {activeBtn === 'Kata' ? <Katas userKata={props.userKata} /> : activeBtn === 'Completed' ? <Completed /> : activeBtn === 'Unfinished' ? <Unfinished /> : activeBtn === 'Authored' ? <Authored /> : ''}
+                    {activeBtn === 'Kata' ? <Katas userKata={props.userKata} /> : activeBtn === 'Completed' ? <Completed userKata={props.userKata}/> : activeBtn === 'Unfinished' ? <Unfinished /> : activeBtn === 'Authored' ? <Authored /> : ''}
                 </Col>
             </Row>
         </Container>
