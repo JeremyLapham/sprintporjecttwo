@@ -1,67 +1,60 @@
 
 
-let codeWarsUserData: any = '';
-let userCompletedKataData: any = '';
-let userAuthoredKataData: any = '';
-let codeWarsKataData: any = '';
+export async function createAccount(createdUser: { Id: number; Username: string; password: string; isAdmin: boolean }){
+    const res = await fetch('https://sprintwarshost.azurewebsites.net/user/adduser', {
+        method: "POST",
+        headers: {
+            'Content-Type': "application/json"
+        },
+        body: JSON.stringify(createdUser)
+    });
 
-// let userName: string = 'torret';
-// let kataId: string = '5556282156230d0e5e000089';
-
-async function UserAPIFetch (username: string)
-{
-    let res = await fetch(`https://www.codewars.com/api/v1/users/${username}`);
+    if (!res.ok) {
+        const message = `An Error has Occured ${res.status}`;
+        throw new Error(message);
+    }
     let data = await res.json();
-    codeWarsUserData = data;
-    // console.log(codeWarsUserData);
-    // console.log('Rank: ' + codeWarsUserData.ranks.overall.rank);
-    // console.log('Username: ' + codeWarsUserData.username);
-    // console.log('Name: ' + codeWarsUserData.name);
-    // console.log('Honor: ' + codeWarsUserData.honor);
-    // console.log('Clan: ' + codeWarsUserData.clan);
-    // console.log('LeaderBoard Position: ' + codeWarsUserData.leaderboardPosition);
-    // console.log('Total Authored Katas: ' + codeWarsUserData.codeChallenges.totalAuthored);
-    // console.log('Total Completed Katas: ' + codeWarsUserData.codeChallenges.totalCompleted);
+    console.log(data);
+    return data;
+}
+export async function LoginUser(user: { Username: string; password: string; }){
+    const res = await fetch('https://sprintwarshost.azurewebsites.net/user/login', {
+        method: "POST",
+        headers: {
+            'Content-Type': "application/json"
+        },
+        body: JSON.stringify(user)
+    });
 
-    return codeWarsUserData;
+    if (!res.ok) {
+        const message = `An Error has Occured ${res.status}`;
+        throw new Error(message);
+    }
+    let data = await res.json();
+    console.log(data);
+    return data;
 }
 
-async function UserCompletedKataAPIFetch (username: string)
-{
-    let res = await fetch(`https://www.codewars.com/api/v1/users/${username}/code-challenges/completed?page=1`);
-    let data = await res.json();
-    userCompletedKataData = data;
-    console.log('Completed Katas: ' + userCompletedKataData.totalItems);
-    
-    return userCompletedKataData;
+export async function GetKataData(user: string) {
+    const response = await fetch(`https://www.codewars.com/api/v1/users/${user}`);
+    const data = await response.json();
+    return data;
 }
 
-async function UserAuthoredKataAPIFetch (username: string)
-{
-    let res = await fetch(`https://www.codewars.com/api/v1/users/${username}/code-challenges/authored`);
-    let data = await res.json();
-    userAuthoredKataData = data;
-    console.log('Authored Katas: ' + userAuthoredKataData.data);
-    // console.log('Authored Katas: ' + userAuthoredKataData.data[0].name);
-    // console.log('Authored Katas: ' + userAuthoredKataData.data[1].name);
-    
-    return userAuthoredKataData;
+export async function GetAllUsers() {
+    const response = await fetch(`https://sprintwarshost.azurewebsites.net/user/GetAllUsers`);
+    const data = await response.json();
+    return data;
 }
 
-async function KataAPIFetch (kataId: string)
-{
-    let res = await fetch(`https://www.codewars.com/api/v1/code-challenges/${kataId}`);
-    let data = await res.json();
-    codeWarsKataData = data;
-    // console.log(codeWarsKataData);
-    // console.log(codeWarsKataData.rank.name);
-    // console.log('Title: ' + codeWarsKataData.name);
-    // console.log('Author: ' + codeWarsKataData.createdBy.username);
-    // console.log('Languages Available: ' + codeWarsKataData.languages);
-    // console.log('Description: ' + codeWarsKataData.description);
-
-    return codeWarsKataData;
+export async function GetUserIsAdmin(username: string) {
+    const response = await fetch(`https://sprintwarshost.azurewebsites.net/user/UserByUsername/${username}`);
+    const data = await response.json();
+    return data;
 }
 
-
-export { UserAPIFetch, KataAPIFetch, UserAuthoredKataAPIFetch, UserCompletedKataAPIFetch }
+export async function GetKataByUserName(UserName: string) {
+    const response = await fetch(`https://sprintwarshost.azurewebsites.net/Kata/GetKataByUsername/${UserName}`);
+    const data = await response.json();
+    return data;
+}

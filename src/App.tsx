@@ -1,20 +1,29 @@
+import React, { useState } from 'react'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Login from './Components/loginComponent/Login';
 import CreateAccount from './Components/CreateAccount/CreateAccount';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Dashboard from './Components/Dashboard/Dashboard';
+import { MyContext } from './Components/context';
 
 function App() {
+  const [username, setUsername] = useState('');
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [userData, setUserData] = useState({});
+  const [userId, setUserId] = useState(0);
   return (
     <div className='font'>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Login />} />
-          <Route path='createAccount' element={<CreateAccount />} />
-        </Routes>
-      </BrowserRouter>
+      <MyContext.Provider value={{ username, setUsername, isAdmin, setIsAdmin, userData, setUserData, userId, setUserId }}>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Login />} />
+            <Route path='createAccount' element={<CreateAccount />} />
+            <Route path='Dashboard' element={<Dashboard />} />
+          </Routes>
+        </BrowserRouter>
+      </MyContext.Provider>
     </div>
   );
 }

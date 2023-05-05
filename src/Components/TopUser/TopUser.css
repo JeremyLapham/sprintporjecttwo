@@ -1,0 +1,100 @@
+:root {
+    --Background: #16171b;
+    --loginBox: #222327;
+    --textColor: #efefef;
+    --signBtnBG: #b63a29;
+}
+
+.infoDiv {
+    background-color: var(--Background);
+    position: absolute;
+    width: 1180px;
+    height: 242px;
+    left: calc(50% - 1180px/2);
+    top: 74px;
+    border-radius: 14px;
+}
+
+.kyu {
+    -webkit-text-fill-color: purple;
+    width: 99px;
+    height: 15px;
+    top: 117px;
+    margin-top: 10%;
+    margin-left: 5%;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    padding-left: 4%;
+    background: #000000;
+}
+
+.adminName {
+
+    position: absolute;
+    width: 445px;
+    height: 0px;
+    left: calc(50% - 445px/2 - 219.5px);
+    top: 59px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+.tText {
+
+    padding-left: 10%;
+    padding-top: 2%;
+    font-size: 20px;
+}
+
+.bText {
+    padding-left: 10%;
+    font-size: 20px;
+}
+.blue,
+.yellow,
+.white,
+.purple {
+    width: 99px;
+    height: 15px;
+    top: 117px;
+    margin-top: 10%;
+    margin-left: 5%;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    padding-left: 4%;
+    background: #000000;
+}
+
+.purple {
+    color: #9c27b0
+}
+
+.blue {
+    color: #2196f3
+}
+
+.yellow {
+    color: #f0db4f
+}
+
+.white {
+    color: #ffffff
+}
